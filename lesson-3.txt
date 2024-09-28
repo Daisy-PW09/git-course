@@ -1,0 +1,84 @@
+1. git commit --amend : mở giao diện chỉnh sửa message commit của commit mới nhất 
+ - Để chỉnh sửa thì gõ i để vào chế độ insert 
+ - Gõ esc để thoát chế độ insert sau khi chỉnh sửa message commit 
+ - Gõ ":wq" để thoát khỏi giao diện chỉnh sửa message
+  git commit --amend -m"<message>" : chỉnh sửa commit message của commit mới nhất và cho phép update message trực tiếp, không cần mở trình chỉnh sửa
+  git restore --staged <file> : dùng để chuyển file từ vùng staging về working repository 
+  git reset HEAD~1 : dùng để chuyển file commit mới nhất từ repository về lại working directory 
+
+2. Hãy tưởng tượng có 1 folder lesson-3 mới được tạo. Hãy liệt kê các file theo từng vùng, liệt kê các commit và message tương ứng sau khi thao tác một loạt các lệnh sau
+a. Tạo 3 file: file1, file2, file3 
+i. Vùng working: empty
+ii. Vùng staging: empty
+iii. Vùng repository: empty
+
+b. Chạy lệnh: git init 
+i. Vùng working: file1, file2, file3 
+ii. Vùng staging: empty 
+iii. Vùng repository: empty
+
+c. Chạy lệnh: git commit -m”init project” (phải chạy git adđ trước rồi mới commit)
+i. Vùng working: file1, file2, file3 
+ii. Vùng staging: 
+iii. Vùng repository: 
+
+d. Chạy lệnh: git add file1 
+i. Vùng working:, file2, file3 
+ii. Vùng staging: file1 
+iii. Vùng repository: 
+
+e. Chạy lệnh: git commit -m”add file” 
+i. Vùng working:, file2, file3 
+ii. Vùng staging: 
+iii. Vùng repository: file1 
+
+f. Chạy lệnh: git add . 
+i. Vùng working:, 
+ii. Vùng staging:file2, file3 
+iii. Vùng repository: file1
+
+g. Chạy lệnh: git restore --staged file2 
+i. Vùng working: file2
+ii. Vùng staging: file3 
+iii. Vùng repository: file1 
+
+h. Chạy lệnh: git commit -m”add all files” 
+i. Vùng working: file2
+ii. Vùng staging:
+iii. Vùng repository: file1, file3 
+
+i. Chạy lệnh: git reset HEAD~1 
+i. Vùng working: file2, file3 
+ii. Vùng staging:
+iii. Vùng repository: file1
+
+3. Hãy tưởng tượng có 1 folder lesson-3-git mới được tạo ra. Hãy liệt kê các file theo từng vùng sau khi thao tác các lệnh sau:
+a. Chạy lệnh git init 
+i. Vùng working: empty
+ii. Vùng staging: empty
+iii. Vùng repository: empty
+
+b. Tạo file file1.txt, file2.txt, oops/file3.txt. 
+i. Vùng working: file1.txt, file2.txt, oops/file3.txt
+ii. Vùng staging: empty
+iii. Vùng repository: empty
+
+c. Thêm file .gitignore, thêm vào 2 dòng: 
+i. file1.txt 
+ii. oops/ 
+i. Vùng working: file1.txt, file2.txt, oops/file3.txt, .gitignore
+ii. Vùng staging: empty
+iii. Vùng repository: empty
+
+d. Chạy lệnh: git add . 
+i. Vùng working: empty
+ii. Vùng staging: file2, .gitignore
+iii. Vùng repository: empty
+
+e. Chạy lệnh: git commit -m"init project" 
+i. Vùng working: empty
+ii. Vùng staging: empty
+iii. Vùng repository: file2, .gitignore
+
+
+
